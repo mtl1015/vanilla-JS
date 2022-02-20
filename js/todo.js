@@ -17,8 +17,8 @@ function handleTodoSubmit(event)
     toDoInput.value = "";
     const newToDoObj = 
     {
-        text:newToDo,
-        id: Date.now()
+        id: Date.now(),
+        text: newToDo
     }
     toDos.push(newToDoObj);
     painToDo(newToDo);
@@ -35,9 +35,9 @@ function deleteTodo(event)
 
 function painToDo(newToDo)
 {
-    const li = document.createElement("li");
-    li.id = newToDo.id
+    const li = document.createElement("li");   
     const span = document.createElement("span");
+    li.id = newToDo.id
     span.innerText = newToDo.text;
     const button = document.createElement("button");
     button.innerText = "❌";
@@ -45,11 +45,6 @@ function painToDo(newToDo)
     li.appendChild(span);   
     li.appendChild(button);
     toDoList.appendChild(li); //append는 제일 마지막에 놓아야 한다!
-}
-
-function sayHello(item)
-{
-    console.log("this is the turn of ", item);//item을 받아서 그 item을 사용하도록 선언하기
 }
 
 toDoForm.addEventListener("submit",handleTodoSubmit);
