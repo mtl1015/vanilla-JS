@@ -21,7 +21,7 @@ function handleTodoSubmit(event)
         text: newToDo
     }
     toDos.push(newToDoObj);
-    painToDo(newToDo);
+    painToDo(newToDoObj);
     saveToDos();
 }
 
@@ -33,12 +33,12 @@ function deleteTodo(event)
     saveToDos();
 }
 
-function painToDo(newToDo)
+function painToDo(newToDoObj)
 {
     const li = document.createElement("li");   
     const span = document.createElement("span");
-    li.id = newToDo.id
-    span.innerText = newToDo.text;
+    li.id = newToDoObj.id
+    span.innerText = newToDoObj.text;
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click",deleteTodo);
